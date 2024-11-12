@@ -1,3 +1,4 @@
+// controllers/usuariosController.js
 const supabase = require('../supabase.js');
 
 // Obter todos os usuários

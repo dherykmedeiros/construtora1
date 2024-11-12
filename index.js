@@ -1,3 +1,4 @@
+// index.js
 const express = require('express')
 const cors = require('cors')
 const PORT = 3000
@@ -10,11 +11,13 @@ app.use(express.json())
 const usuariosRoutes = require('./routes/usuariosRoutes');
 const obrasRoutes = require('./routes/obrasRoutes');
 const relatoriosRoutes = require('./routes/relatoriosRoutes');
+const assinaturasRoutes = require('./routes/assinaturasRoutes');
 
 // Usar as rotas
 app.use('/usuarios', usuariosRoutes);
 app.use('/obras', obrasRoutes);
 app.use('/relatorios', relatoriosRoutes);
+app.use('/assinaturas', assinaturasRoutes);
 
 
 

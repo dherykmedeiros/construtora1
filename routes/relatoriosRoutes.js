@@ -1,3 +1,4 @@
+// routes/relatoriosRoutes.js
 const express = require('express');
 const { 
   getRelatorios, 

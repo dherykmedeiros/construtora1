@@ -3,7 +3,7 @@ const supabase = require('../supabase.js');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-const SECRET_KEY = process.env.SECRET_KEY ; // Use uma chave segura e forte
+const SECRET_KEY = process.env.SECRET_KEY; // Use uma chave segura e forte
 
 // Função de login
 exports.login = async (req, res) => {
@@ -29,5 +29,11 @@ exports.login = async (req, res) => {
   // Gera um token JWT com o ID do usuário
   const token = jwt.sign({ id: usuario.id }, SECRET_KEY, { expiresIn: '1h' });
 
-  res.status(200).json({ message: 'Login bem-sucedido', token });
+  // Retorna o token, nome e função do usuário
+  res.status(200).json({
+    message: 'Login bem-sucedido',
+    token,
+    nome: usuario.nome,
+    funcao: usuario.funcao
+  });
 };
